@@ -1,0 +1,7 @@
+
+fonts:
+  Clairvo-Regular:
+    source: source/Clairvo-Regular.ufo
+    ttf:
+      source: source/Clairvo-Regular.input.ttf
+      tables: [GDEF, GSUB, GPOS]

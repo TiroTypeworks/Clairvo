@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="BASE" format="2">
+  <advance width="640"/>
+  <unicode hex="25CC"/>
+  <anchor x="320" y="-180" name="hundreds"/>
+  <anchor x="320" y="680" name="tens"/>
+  <anchor x="320" y="-180" name="thousands"/>
+  <anchor x="320" y="680" name="units"/>
+  <outline>
+    <contour>
+      <point x="340" y="-200" type="line"/>
+      <point x="340" y="700" type="line"/>
+      <point x="300" y="700" type="line"/>
+      <point x="300" y="-200" type="line"/>
+    </contour>
+    <contour>
+      <point x="340" y="-200" type="line"/>
+      <point x="340" y="700" type="line"/>
+      <point x="300" y="700" type="line"/>
+      <point x="300" y="-200" type="line"/>
+    </contour>
+  </outline>
+  <guideline angle="90" x="320" y="0"/>
+  <guideline angle="0" x="0" y="680"/>
+  <guideline angle="0" x="0" y="-180"/>
+  <lib>
+  <dict>
+  <key>public.markColor</key>
+  <string>0.651,1,0.6,1</string>
+  </dict>
+  </lib>
+</glyph>

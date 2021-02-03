@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="six" format="2">
+  <unicode hex="0036"/>
+  <anchor x="-130" y="120" name="_hundreds"/>
+  <anchor x="390" y="380" name="_tens"/>
+  <anchor x="390" y="120" name="_thousands"/>
+  <anchor x="-130" y="380" name="_units"/>
+  <outline>
+    <contour>
+      <point x="150" y="100" type="line"/>
+      <point x="150" y="400" type="line"/>
+      <point x="110" y="400" type="line"/>
+      <point x="110" y="100" type="line"/>
+    </contour>
+  </outline>
+  <guideline angle="0" x="0" y="100"/>
+  <guideline angle="0" x="0" y="400"/>
+  <guideline angle="0" x="0" y="380"/>
+  <guideline angle="0" x="0" y="120"/>
+  <guideline angle="90" x="-150" y="0"/>
+  <guideline angle="90" x="-130" y="0"/>
+  <guideline angle="90" x="150" y="0"/>
+  <guideline angle="90" x="130" y="0"/>
+  <lib>
+  <dict>
+  <key>public.markColor</key>
+  <string>0.6,1,0.602,1</string>
+  </dict>
+  </lib>
+</glyph>

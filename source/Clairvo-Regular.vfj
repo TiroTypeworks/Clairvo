@@ -1,0 +1,1837 @@
+{
+  "version":8,
+  "font":{
+    "glyphsCount":16,
+    "upm":1000,
+    "glyphs":[
+      {
+        "name":".notdef",
+        "lastModified":"2021-02-03 05:53:46",
+        "colorFlag":113,
+        "layers":[
+          {
+            "name":"Regular",
+            "colorFlag":113,
+            "advanceWidth":464,
+            "elements":[
+              {
+                "elementData":{
+                  "contours":[
+                    {
+                      "nodes":[
+                        "484 34 s",
+                        "484 665 s",
+                        "484 689  472 699  449 699 s",
+                        "16 699 s",
+                        "-8 699  -20 689  -20 665 s",
+                        "-20 34 s",
+                        "-20 11  -8 0  16 0 s",
+                        "449 0 s",
+                        "472 0  484 11 c"
+                      ]
+                    },
+                    {
+                      "nodes":[
+                        "249 240 s",
+                        "249 215  237 206  214 206 s",
+                        "192 206  180 215  180 240 s",
+                        "180 332 s",
+                        "180 367  208 370  216 371 s",
+                        "243 374  314 382  314 466 s",
+                        "314 513  291 551  218 551 s",
+                        "171 551  142 535  131 531 s",
+                        "126 529  121 528  117 528 s",
+                        "101 528  89 545  89 561 s",
+                        "89 570  92 577  102 585 s",
+                        "117 597  182 616  234 616 s",
+                        "338 616  390 550  390 473 s",
+                        "390 400  342 333  249 319"
+                      ]
+                    },
+                    {
+                      "nodes":[
+                        "166 121 s",
+                        "166 148  187 169  213 169 s",
+                        "240 169  262 148  262 121 s",
+                        "262 95  240 74  213 74 s",
+                        "187 74  166 95 c"
+                      ]
+                    }
+                  ]
+                },
+                "active":true
+              }
+            ],
+            "guidelines":[
+              {
+                "vertical":true,
+                "position":180
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name":"space",
+        "unicode":"0020",
+        "lastModified":"2020-08-27 23:44:18",
+        "colorFlag":113,
+        "layers":[
+          {
+            "name":"Regular",
+            "colorFlag":113,
+            "advanceWidth":220
+          }
+        ]
+      },
+      {
+        "name":"BASE",
+        "unicode":"25cc",
+        "lastModified":"2021-02-03 08:30:17",
+        "colorFlag":113,
+        "layers":[
+          {
+            "name":"mask.Regular",
+            "colorFlag":113,
+            "flags":13,
+            "advanceWidth":640,
+            "elements":[
+              {
+                "elementData":{
+                  "contours":[
+                    {
+                      "nodes":[
+                        "340 -200",
+                        "340 700",
+                        "300 700",
+                        "300 -200"
+                      ]
+                    }
+                  ]
+                }
+              }
+            ],
+            "color":"#608090"
+          },
+          {
+            "name":"Regular",
+            "colorFlag":113,
+            "flags":0,
+            "advanceWidth":640,
+            "elements":[
+              {
+                "elementData":{
+                  "contours":[
+                    {
+                      "nodes":[
+                        "340 -200",
+                        "340 700",
+                        "300 700",
+                        "300 -200"
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "elementData":{
+                  "contours":[
+                    {
+                      "nodes":[
+                        "340 -200",
+                        "340 700",
+                        "300 700",
+                        "300 -200"
+                      ]
+                    }
+                  ]
+                },
+                "active":true
+              }
+            ],
+            "guidelines":[
+              {
+                "vertical":true,
+                "position":320
+              },
+              {
+                "horizontal":true,
+                "position":680
+              },
+              {
+                "horizontal":true,
+                "position":-180
+              }
+            ],
+            "anchors":[
+              {
+                "name":"units",
+                "point":"320 680",
+                "appearance":5
+              },
+              {
+                "name":"tens",
+                "point":"320 680",
+                "appearance":5
+              },
+              {
+                "name":"hundreds",
+                "point":"320 -180",
+                "appearance":5
+              },
+              {
+                "name":"thousands",
+                "point":"320 -180",
+                "appearance":5
+              }
+            ],
+            "color":"#bac000",
+            "active":true
+          }
+        ]
+      },
+      {
+        "name":"zero",
+        "unicode":"0030",
+        "lastModified":"2021-02-03 06:38:14",
+        "openTypeGlyphClass":3,
+        "colorFlag":121,
+        "layers":[
+          {
+            "name":"mask.Regular",
+            "colorFlag":113,
+            "flags":13,
+            "advanceWidth":0,
+            "elements":[
+              {
+                "elementData":{
+                  "contours":[
+                    {
+                      "nodes":[
+                        "20 -200",
+                        "20 700",
+                        "-20 700",
+                        "-20 -200"
+                      ]
+                    }
+                  ]
+                },
+                "active":true
+              }
+            ],
+            "color":"#608090"
+          },
+          {
+            "name":"Regular",
+            "colorFlag":121,
+            "flags":0,
+            "advanceWidth":0,
+            "guidelines":[
+              {
+                "center":"-5 100",
+                "vector":"229.454 0"
+              },
+              {
+                "horizontal":true,
+                "position":400
+              },
+              {
+                "horizontal":true,
+                "position":380
+              },
+              {
+                "center":"-5 120",
+                "vector":"229.454 0"
+              },
+              {
+                "vertical":true,
+                "position":-150
+              },
+              {
+                "vertical":true,
+                "position":-130
+              },
+              {
+                "vertical":true,
+                "position":150
+              },
+              {
+                "vertical":true,
+                "position":130
+              }
+            ],
+            "anchors":[
+              {
+                "name":"_units",
+                "point":"-130 380",
+                "appearance":5
+              },
+              {
+                "name":"_tens",
+                "point":"130 380",
+                "appearance":5
+              },
+              {
+                "name":"_hundreds",
+                "point":"-130 120",
+                "appearance":5
+              },
+              {
+                "name":"_thousands",
+                "point":"130 120",
+                "appearance":5
+              }
+            ],
+            "color":"#bac000",
+            "active":true
+          }
+        ]
+      },
+      {
+        "name":"one",
+        "unicode":"0031",
+        "lastModified":"2021-02-03 06:38:14",
+        "openTypeGlyphClass":3,
+        "colorFlag":121,
+        "layers":[
+          {
+            "name":"mask.Regular",
+            "colorFlag":113,
+            "flags":13,
+            "advanceWidth":0,
+            "elements":[
+              {
+                "elementData":{
+                  "contours":[
+                    {
+                      "nodes":[
+                        "20 -200",
+                        "20 700",
+                        "-20 700",
+                        "-20 -200"
+                      ]
+                    }
+                  ]
+                },
+                "active":true
+              }
+            ],
+            "color":"#608090"
+          },
+          {
+            "name":"Regular",
+            "colorFlag":121,
+            "flags":0,
+            "advanceWidth":0,
+            "elements":[
+              {
+                "elementData":{
+                  "contours":[
+                    {
+                      "nodes":[
+                        "150 400",
+                        "-150 400",
+                        "-150 360",
+                        "150 360"
+                      ]
+                    }
+                  ]
+                },
+                "active":true
+              }
+            ],
+            "guidelines":[
+              {
+                "center":"-5 100",
+                "vector":"229.454 0"
+              },
+              {
+                "horizontal":true,
+                "position":400
+              },
+              {
+                "horizontal":true,
+                "position":380
+              },
+              {
+                "center":"-5 120",
+                "vector":"229.454 0"
+              },
+              {
+                "vertical":true,
+                "position":-150
+              },
+              {
+                "vertical":true,
+                "position":-130
+              },
+              {
+                "vertical":true,
+                "position":150
+              },
+              {
+                "vertical":true,
+                "position":130
+              }
+            ],
+            "anchors":[
+              {
+                "name":"_units",
+                "point":"-130 380",
+                "appearance":5
+              },
+              {
+                "name":"_tens",
+                "point":"130 380",
+                "appearance":5
+              },
+              {
+                "name":"_hundreds",
+                "point":"-130 380",
+                "appearance":5
+              },
+              {
+                "name":"_thousands",
+                "point":"130 380",
+                "appearance":5
+              }
+            ],
+            "color":"#bac000",
+            "active":true
+          }
+        ]
+      },
+      {
+        "name":"two",
+        "unicode":"0032",
+        "lastModified":"2021-02-03 07:34:54",
+        "openTypeGlyphClass":3,
+        "colorFlag":121,
+        "layers":[
+          {
+            "name":"mask.Regular",
+            "colorFlag":113,
+            "flags":13,
+            "advanceWidth":0,
+            "elements":[
+              {
+                "elementData":{
+                  "contours":[
+                    {
+                      "nodes":[
+                        "20 -200",
+                        "20 700",
+                        "-20 700",
+                        "-20 -200"
+                      ]
+                    }
+                  ]
+                },
+                "active":true
+              }
+            ],
+            "color":"#608090"
+          },
+          {
+            "name":"Regular",
+            "colorFlag":121,
+            "flags":0,
+            "advanceWidth":0,
+            "elements":[
+              {
+                "elementData":{
+                  "contours":[
+                    {
+                      "nodes":[
+                        "150 140",
+                        "-150 140",
+                        "-150 100",
+                        "150 100"
+                      ]
+                    }
+                  ]
+                },
+                "active":true
+              }
+            ],
+            "guidelines":[
+              {
+                "center":"-5 100",
+                "vector":"229.454 0"
+              },
+              {
+                "horizontal":true,
+                "position":400
+              },
+              {
+                "horizontal":true,
+                "position":380
+              },
+              {
+                "center":"-5 120",
+                "vector":"229.454 0"
+              },
+              {
+                "vertical":true,
+                "position":-150
+              },
+              {
+                "vertical":true,
+                "position":-130
+              },
+              {
+                "vertical":true,
+                "position":150
+              },
+              {
+                "vertical":true,
+                "position":130
+              }
+            ],
+            "anchors":[
+              {
+                "name":"_units",
+                "point":"-130 380",
+                "appearance":5
+              },
+              {
+                "name":"_tens",
+                "point":"130 380",
+                "appearance":5
+              },
+              {
+                "name":"_hundreds",
+                "point":"-130 -140",
+                "appearance":5
+              },
+              {
+                "name":"_thousands",
+                "point":"130 -140",
+                "appearance":5
+              }
+            ],
+            "color":"#bac000",
+            "active":true
+          }
+        ]
+      },
+      {
+        "name":"three",
+        "unicode":"0033",
+        "lastModified":"2021-02-03 06:38:14",
+        "openTypeGlyphClass":3,
+        "colorFlag":121,
+        "layers":[
+          {
+            "name":"mask.Regular",
+            "colorFlag":113,
+            "flags":13,
+            "advanceWidth":0,
+            "elements":[
+              {
+                "elementData":{
+                  "contours":[
+                    {
+                      "nodes":[
+                        "20 -200",
+                        "20 700",
+                        "-20 700",
+                        "-20 -200"
+                      ]
+                    }
+                  ]
+                },
+                "active":true
+              }
+            ],
+            "color":"#608090"
+          },
+          {
+            "name":"Regular",
+            "colorFlag":121,
+            "flags":0,
+            "advanceWidth":0,
+            "elements":[
+              {
+                "elementData":{
+                  "contours":[
+                    {
+                      "nodes":[
+                        "150 140",
+                        "-110 400",
+                        "-140 370",
+                        "120 110"
+                      ]
+                    }
+                  ]
+                },
+                "active":true
+              }
+            ],
+            "guidelines":[
+              {
+                "center":"-5 100",
+                "vector":"229.454 0"
+              },
+              {
+                "horizontal":true,
+                "position":400
+              },
+              {
+                "horizontal":true,
+                "position":380
+              },
+              {
+                "center":"-5 120",
+                "vector":"229.454 0"
+              },
+              {
+                "vertical":true,
+                "position":-150
+              },
+              {
+                "vertical":true,
+                "position":-130
+              },
+              {
+                "vertical":true,
+                "position":150
+              },
+              {
+                "vertical":true,
+                "position":130
+              }
+            ],
+            "anchors":[
+              {
+                "name":"_units",
+                "point":"-130 380",
+                "appearance":5
+              },
+              {
+                "name":"_tens",
+                "point":"130 380",
+                "appearance":5
+              },
+              {
+                "name":"_hundreds",
+                "point":"-130 130",
+                "appearance":5
+              },
+              {
+                "name":"_thousands",
+                "point":"130 130",
+                "appearance":5
+              }
+            ],
+            "color":"#bac000",
+            "active":true
+          }
+        ]
+      },
+      {
+        "name":"four",
+        "unicode":"0034",
+        "lastModified":"2021-02-03 06:38:14",
+        "openTypeGlyphClass":3,
+        "colorFlag":121,
+        "layers":[
+          {
+            "name":"mask.Regular",
+            "colorFlag":113,
+            "flags":13,
+            "advanceWidth":0,
+            "elements":[
+              {
+                "elementData":{
+                  "contours":[
+                    {
+                      "nodes":[
+                        "20 -200",
+                        "20 700",
+                        "-20 700",
+                        "-20 -200"
+                      ]
+                    }
+                  ]
+                },
+                "active":true
+              }
+            ],
+            "color":"#608090"
+          },
+          {
+            "name":"Regular",
+            "colorFlag":121,
+            "flags":0,
+            "advanceWidth":0,
+            "elements":[
+              {
+                "elementData":{
+                  "contours":[
+                    {
+                      "nodes":[
+                        "150 370",
+                        "120 400",
+                        "-140 140",
+                        "-110 110"
+                      ]
+                    }
+                  ]
+                },
+                "active":true
+              }
+            ],
+            "guidelines":[
+              {
+                "center":"-5 100",
+                "vector":"229.454 0"
+              },
+              {
+                "horizontal":true,
+                "position":400
+              },
+              {
+                "horizontal":true,
+                "position":380
+              },
+              {
+                "center":"-5 120",
+                "vector":"229.454 0"
+              },
+              {
+                "vertical":true,
+                "position":-150
+              },
+              {
+                "vertical":true,
+                "position":-130
+              },
+              {
+                "vertical":true,
+                "position":150
+              },
+              {
+                "vertical":true,
+                "position":130
+              }
+            ],
+            "anchors":[
+              {
+                "name":"_units",
+                "point":"-130 380",
+                "appearance":5
+              },
+              {
+                "name":"_tens",
+                "point":"130 380",
+                "appearance":5
+              },
+              {
+                "name":"_hundreds",
+                "point":"-130 130",
+                "appearance":5
+              },
+              {
+                "name":"_thousands",
+                "point":"130 130",
+                "appearance":5
+              }
+            ],
+            "color":"#bac000",
+            "active":true
+          }
+        ]
+      },
+      {
+        "name":"five",
+        "unicode":"0035",
+        "lastModified":"2021-02-03 07:45:19",
+        "openTypeGlyphClass":3,
+        "colorFlag":121,
+        "layers":[
+          {
+            "name":"mask.Regular",
+            "colorFlag":113,
+            "flags":13,
+            "advanceWidth":0,
+            "elements":[
+              {
+                "elementData":{
+                  "contours":[
+                    {
+                      "nodes":[
+                        "20 -200",
+                        "20 700",
+                        "-20 700",
+                        "-20 -200"
+                      ]
+                    }
+                  ]
+                },
+                "active":true
+              }
+            ],
+            "color":"#608090"
+          },
+          {
+            "name":"Regular",
+            "colorFlag":121,
+            "flags":0,
+            "advanceWidth":0,
+            "elements":[
+              {
+                "elementData":{
+                  "contours":[
+                    {
+                      "nodes":[
+                        "122 400",
+                        "-150 400",
+                        "-150 360",
+                        "122 360"
+                      ]
+                    },
+                    {
+                      "nodes":[
+                        "150 372",
+                        "122 400",
+                        "-138 140",
+                        "-110 112"
+                      ]
+                    }
+                  ]
+                },
+                "active":true
+              }
+            ],
+            "guidelines":[
+              {
+                "center":"-5 100",
+                "vector":"229.454 0"
+              },
+              {
+                "horizontal":true,
+                "position":400
+              },
+              {
+                "horizontal":true,
+                "position":380
+              },
+              {
+                "center":"-5 120",
+                "vector":"229.454 0"
+              },
+              {
+                "vertical":true,
+                "position":-150
+              },
+              {
+                "vertical":true,
+                "position":-130
+              },
+              {
+                "vertical":true,
+                "position":150
+              },
+              {
+                "vertical":true,
+                "position":130
+              }
+            ],
+            "anchors":[
+              {
+                "name":"_units",
+                "point":"-130 380",
+                "appearance":5
+              }
+            ],
+            "color":"#bac000",
+            "active":true
+          }
+        ]
+      },
+      {
+        "name":"six",
+        "unicode":"0036",
+        "lastModified":"2021-02-03 06:44:51",
+        "openTypeGlyphClass":3,
+        "colorFlag":121,
+        "layers":[
+          {
+            "name":"mask.Regular",
+            "colorFlag":113,
+            "flags":13,
+            "advanceWidth":0,
+            "elements":[
+              {
+                "elementData":{
+                  "contours":[
+                    {
+                      "nodes":[
+                        "20 -200",
+                        "20 700",
+                        "-20 700",
+                        "-20 -200"
+                      ]
+                    }
+                  ]
+                },
+                "active":true
+              }
+            ],
+            "color":"#608090"
+          },
+          {
+            "name":"Regular",
+            "colorFlag":121,
+            "flags":0,
+            "advanceWidth":0,
+            "elements":[
+              {
+                "elementData":{
+                  "contours":[
+                    {
+                      "nodes":[
+                        "150 100",
+                        "150 400",
+                        "110 400",
+                        "110 100"
+                      ]
+                    }
+                  ]
+                },
+                "active":true
+              }
+            ],
+            "guidelines":[
+              {
+                "center":"-5 100",
+                "vector":"229.454 0"
+              },
+              {
+                "horizontal":true,
+                "position":400
+              },
+              {
+                "horizontal":true,
+                "position":380
+              },
+              {
+                "center":"-5 120",
+                "vector":"229.454 0"
+              },
+              {
+                "vertical":true,
+                "position":-150
+              },
+              {
+                "vertical":true,
+                "position":-130
+              },
+              {
+                "vertical":true,
+                "position":150
+              },
+              {
+                "vertical":true,
+                "position":130
+              }
+            ],
+            "anchors":[
+              {
+                "name":"_units",
+                "point":"-130 380",
+                "appearance":5
+              },
+              {
+                "name":"_tens",
+                "point":"390 380",
+                "appearance":5
+              },
+              {
+                "name":"_hundreds",
+                "point":"-130 120",
+                "appearance":5
+              },
+              {
+                "name":"_thousands",
+                "point":"390 120",
+                "appearance":5
+              }
+            ],
+            "color":"#bac000",
+            "active":true
+          }
+        ]
+      },
+      {
+        "name":"seven",
+        "unicode":"0037",
+        "lastModified":"2021-02-03 06:38:14",
+        "openTypeGlyphClass":3,
+        "colorFlag":121,
+        "layers":[
+          {
+            "name":"mask.Regular",
+            "colorFlag":113,
+            "flags":13,
+            "advanceWidth":0,
+            "elements":[
+              {
+                "elementData":{
+                  "contours":[
+                    {
+                      "nodes":[
+                        "20 -200",
+                        "20 700",
+                        "-20 700",
+                        "-20 -200"
+                      ]
+                    }
+                  ]
+                },
+                "active":true
+              }
+            ],
+            "color":"#608090"
+          },
+          {
+            "name":"Regular",
+            "colorFlag":121,
+            "flags":0,
+            "advanceWidth":0,
+            "elements":[
+              {
+                "elementData":{
+                  "contours":[
+                    {
+                      "nodes":[
+                        "150 400",
+                        "-150 400",
+                        "-150 360",
+                        "150 360"
+                      ]
+                    },
+                    {
+                      "nodes":[
+                        "150 100",
+                        "150 400",
+                        "110 400",
+                        "110 100"
+                      ]
+                    },
+                    {
+                      "nodes":[
+                        "-110 100",
+                        "-110 400",
+                        "-150 400",
+                        "-150 100"
+                      ]
+                    }
+                  ]
+                },
+                "active":true
+              }
+            ],
+            "guidelines":[
+              {
+                "center":"-5 100",
+                "vector":"229.454 0"
+              },
+              {
+                "horizontal":true,
+                "position":400
+              },
+              {
+                "horizontal":true,
+                "position":380
+              },
+              {
+                "center":"-5 120",
+                "vector":"229.454 0"
+              },
+              {
+                "vertical":true,
+                "position":-150
+              },
+              {
+                "vertical":true,
+                "position":-130
+              },
+              {
+                "vertical":true,
+                "position":150
+              },
+              {
+                "vertical":true,
+                "position":130
+              }
+            ],
+            "anchors":[
+              {
+                "name":"_units",
+                "point":"-130 380",
+                "appearance":5
+              },
+              {
+                "name":"_tens",
+                "point":"130 380",
+                "appearance":5
+              },
+              {
+                "name":"_hundreds",
+                "point":"-130 120",
+                "appearance":5
+              },
+              {
+                "name":"_thousands",
+                "point":"130 120",
+                "appearance":5
+              }
+            ],
+            "color":"#bac000",
+            "active":true
+          }
+        ]
+      },
+      {
+        "name":"eight",
+        "unicode":"0038",
+        "lastModified":"2021-02-03 06:38:14",
+        "openTypeGlyphClass":3,
+        "colorFlag":121,
+        "layers":[
+          {
+            "name":"mask.Regular",
+            "colorFlag":113,
+            "flags":13,
+            "advanceWidth":0,
+            "elements":[
+              {
+                "elementData":{
+                  "contours":[
+                    {
+                      "nodes":[
+                        "20 -200",
+                        "20 700",
+                        "-20 700",
+                        "-20 -200"
+                      ]
+                    }
+                  ]
+                },
+                "active":true
+              }
+            ],
+            "color":"#608090"
+          },
+          {
+            "name":"Regular",
+            "colorFlag":121,
+            "flags":0,
+            "advanceWidth":0,
+            "elements":[
+              {
+                "elementData":{
+                  "contours":[
+                    {
+                      "nodes":[
+                        "150 140",
+                        "-150 140",
+                        "-150 100",
+                        "150 100"
+                      ]
+                    },
+                    {
+                      "nodes":[
+                        "150 100",
+                        "150 400",
+                        "110 400",
+                        "110 100"
+                      ]
+                    },
+                    {
+                      "nodes":[
+                        "-110 100",
+                        "-110 400",
+                        "-150 400",
+                        "-150 100"
+                      ]
+                    }
+                  ]
+                },
+                "active":true
+              }
+            ],
+            "guidelines":[
+              {
+                "center":"-5 100",
+                "vector":"229.454 0"
+              },
+              {
+                "horizontal":true,
+                "position":400
+              },
+              {
+                "horizontal":true,
+                "position":380
+              },
+              {
+                "center":"-5 120",
+                "vector":"229.454 0"
+              },
+              {
+                "vertical":true,
+                "position":-150
+              },
+              {
+                "vertical":true,
+                "position":-130
+              },
+              {
+                "vertical":true,
+                "position":150
+              },
+              {
+                "vertical":true,
+                "position":130
+              }
+            ],
+            "anchors":[
+              {
+                "name":"_units",
+                "point":"-130 380",
+                "appearance":5
+              },
+              {
+                "name":"_tens",
+                "point":"130 380",
+                "appearance":5
+              },
+              {
+                "name":"_hundreds",
+                "point":"-130 120",
+                "appearance":5
+              },
+              {
+                "name":"_thousands",
+                "point":"130 120",
+                "appearance":5
+              }
+            ],
+            "color":"#bac000",
+            "active":true
+          }
+        ]
+      },
+      {
+        "name":"nine",
+        "unicode":"0039",
+        "lastModified":"2021-02-03 08:30:30",
+        "openTypeGlyphClass":3,
+        "colorFlag":121,
+        "layers":[
+          {
+            "name":"mask.Regular",
+            "colorFlag":113,
+            "flags":13,
+            "advanceWidth":0,
+            "elements":[
+              {
+                "elementData":{
+                  "contours":[
+                    {
+                      "nodes":[
+                        "20 -200",
+                        "20 700",
+                        "-20 700",
+                        "-20 -200"
+                      ]
+                    }
+                  ]
+                },
+                "active":true
+              }
+            ],
+            "color":"#608090"
+          },
+          {
+            "name":"Regular",
+            "colorFlag":121,
+            "flags":0,
+            "advanceWidth":0,
+            "elements":[
+              {
+                "elementData":{
+                  "contours":[
+                    {
+                      "nodes":[
+                        "150 140",
+                        "-150 140",
+                        "-150 100",
+                        "150 100"
+                      ]
+                    },
+                    {
+                      "nodes":[
+                        "150 400",
+                        "-150 400",
+                        "-150 360",
+                        "150 360"
+                      ]
+                    },
+                    {
+                      "nodes":[
+                        "-110 100",
+                        "-110 400",
+                        "-150 400",
+                        "-150 100"
+                      ]
+                    },
+                    {
+                      "nodes":[
+                        "150 100",
+                        "150 400",
+                        "110 400",
+                        "110 100"
+                      ]
+                    }
+                  ]
+                },
+                "active":true
+              }
+            ],
+            "guidelines":[
+              {
+                "center":"-5 100",
+                "vector":"229.454 0"
+              },
+              {
+                "horizontal":true,
+                "position":400
+              },
+              {
+                "horizontal":true,
+                "position":380
+              },
+              {
+                "center":"-5 120",
+                "vector":"229.454 0"
+              },
+              {
+                "vertical":true,
+                "position":-150
+              },
+              {
+                "vertical":true,
+                "position":-130
+              },
+              {
+                "vertical":true,
+                "position":150
+              },
+              {
+                "vertical":true,
+                "position":130
+              }
+            ],
+            "anchors":[
+              {
+                "name":"_units",
+                "point":"-130 380",
+                "appearance":5
+              },
+              {
+                "name":"_tens",
+                "point":"130 380",
+                "appearance":5
+              },
+              {
+                "name":"_hundreds",
+                "point":"-130 120",
+                "appearance":5
+              },
+              {
+                "name":"_thousands",
+                "point":"130 120",
+                "appearance":5
+              }
+            ],
+            "color":"#bac000",
+            "active":true
+          }
+        ]
+      },
+      {
+        "name":"f50",
+        "lastModified":"2021-02-03 07:54:20",
+        "openTypeGlyphClass":3,
+        "colorFlag":121,
+        "layers":[
+          {
+            "name":"mask.Regular",
+            "colorFlag":113,
+            "flags":13,
+            "advanceWidth":0,
+            "elements":[
+              {
+                "elementData":{
+                  "contours":[
+                    {
+                      "nodes":[
+                        "20 -200",
+                        "20 700",
+                        "-20 700",
+                        "-20 -200"
+                      ]
+                    }
+                  ]
+                },
+                "active":true
+              }
+            ],
+            "color":"#608090"
+          },
+          {
+            "name":"Regular",
+            "colorFlag":121,
+            "flags":0,
+            "advanceWidth":0,
+            "elements":[
+              {
+                "elementData":{
+                  "contours":[
+                    {
+                      "nodes":[
+                        "-122 400",
+                        "-122 360",
+                        "150 360",
+                        "150 400"
+                      ]
+                    },
+                    {
+                      "nodes":[
+                        "-150 372",
+                        "110 112",
+                        "138 140",
+                        "-122 400"
+                      ]
+                    }
+                  ]
+                },
+                "active":true
+              }
+            ],
+            "guidelines":[
+              {
+                "center":"-5 100",
+                "vector":"229.454 0"
+              },
+              {
+                "horizontal":true,
+                "position":400
+              },
+              {
+                "horizontal":true,
+                "position":380
+              },
+              {
+                "center":"-5 120",
+                "vector":"229.454 0"
+              },
+              {
+                "vertical":true,
+                "position":-150
+              },
+              {
+                "vertical":true,
+                "position":-130
+              },
+              {
+                "vertical":true,
+                "position":150
+              },
+              {
+                "vertical":true,
+                "position":130
+              }
+            ],
+            "anchors":[
+              {
+                "name":"_tens",
+                "point":"130 380",
+                "appearance":5
+              }
+            ],
+            "color":"#bac000",
+            "active":true
+          }
+        ]
+      },
+      {
+        "name":"f500",
+        "lastModified":"2021-02-03 07:54:20",
+        "openTypeGlyphClass":3,
+        "colorFlag":121,
+        "layers":[
+          {
+            "name":"mask.Regular",
+            "colorFlag":113,
+            "flags":13,
+            "advanceWidth":0,
+            "elements":[
+              {
+                "elementData":{
+                  "contours":[
+                    {
+                      "nodes":[
+                        "20 -200",
+                        "20 700",
+                        "-20 700",
+                        "-20 -200"
+                      ]
+                    }
+                  ]
+                },
+                "active":true
+              }
+            ],
+            "color":"#608090"
+          },
+          {
+            "name":"Regular",
+            "colorFlag":121,
+            "flags":0,
+            "advanceWidth":0,
+            "elements":[
+              {
+                "elementData":{
+                  "contours":[
+                    {
+                      "nodes":[
+                        "122 100",
+                        "122 140",
+                        "-150 140",
+                        "-150 100"
+                      ]
+                    },
+                    {
+                      "nodes":[
+                        "150 128",
+                        "-110 388",
+                        "-138 360",
+                        "122 100"
+                      ]
+                    }
+                  ]
+                },
+                "active":true
+              }
+            ],
+            "guidelines":[
+              {
+                "center":"-5 100",
+                "vector":"229.454 0"
+              },
+              {
+                "horizontal":true,
+                "position":400
+              },
+              {
+                "horizontal":true,
+                "position":380
+              },
+              {
+                "center":"-5 120",
+                "vector":"229.454 0"
+              },
+              {
+                "vertical":true,
+                "position":-150
+              },
+              {
+                "vertical":true,
+                "position":-130
+              },
+              {
+                "vertical":true,
+                "position":150
+              },
+              {
+                "vertical":true,
+                "position":130
+              }
+            ],
+            "anchors":[
+              {
+                "name":"_hundreds",
+                "point":"-130 120",
+                "appearance":5
+              }
+            ],
+            "color":"#bac000",
+            "active":true
+          }
+        ]
+      },
+      {
+        "name":"f5000",
+        "lastModified":"2021-02-03 07:54:20",
+        "openTypeGlyphClass":3,
+        "colorFlag":121,
+        "layers":[
+          {
+            "name":"mask.Regular",
+            "colorFlag":113,
+            "flags":13,
+            "advanceWidth":0,
+            "elements":[
+              {
+                "elementData":{
+                  "contours":[
+                    {
+                      "nodes":[
+                        "20 -200",
+                        "20 700",
+                        "-20 700",
+                        "-20 -200"
+                      ]
+                    }
+                  ]
+                },
+                "active":true
+              }
+            ],
+            "color":"#608090"
+          },
+          {
+            "name":"Regular",
+            "colorFlag":121,
+            "flags":0,
+            "advanceWidth":0,
+            "elements":[
+              {
+                "elementData":{
+                  "contours":[
+                    {
+                      "nodes":[
+                        "-122 100",
+                        "150 100",
+                        "150 140",
+                        "-122 140"
+                      ]
+                    },
+                    {
+                      "nodes":[
+                        "-150 128",
+                        "-122 100",
+                        "138 360",
+                        "110 388"
+                      ]
+                    }
+                  ]
+                },
+                "active":true
+              }
+            ],
+            "guidelines":[
+              {
+                "center":"-5 100",
+                "vector":"229.454 0"
+              },
+              {
+                "horizontal":true,
+                "position":400
+              },
+              {
+                "horizontal":true,
+                "position":380
+              },
+              {
+                "center":"-5 120",
+                "vector":"229.454 0"
+              },
+              {
+                "vertical":true,
+                "position":-150
+              },
+              {
+                "vertical":true,
+                "position":-130
+              },
+              {
+                "vertical":true,
+                "position":150
+              },
+              {
+                "vertical":true,
+                "position":130
+              }
+            ],
+            "anchors":[
+              {
+                "name":"_thousands",
+                "point":"130 120",
+                "appearance":5
+              }
+            ],
+            "color":"#bac000",
+            "active":true
+          }
+        ]
+      }
+    ],
+    "defaultMaster":"Regular",
+    "interpolationFlags":0,
+    "hinting":{
+      "gasp":[
+        15,
+        65535
+      ]
+    },
+    "info":{
+      "tfn":"Clairvo",
+      "sgn":"Clairvo",
+      "creationDate":"2021/02/02 21:38:28",
+      "copyright":"Copyright 2021 The Clairvo Project Authors (https://github.com/TiroTypeworks/Clairvo)",
+      "trademark":"Clairvo is a trademark of Tiro Typeworks Ltd..",
+      "designer":"John Hudson",
+      "designerURL":"https://www.tiro.com",
+      "license":"This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL",
+      "licenseURL":"https://scripts.sil.org/OFL",
+      "manufacturer":"Tiro Typeworks Ltd",
+      "manufacturerURL":"https://www.tiro.com",
+      "description":"Clairvo is a proof-of-concept font that uses OpenType Layout to implement the number system developed by Cistercian monks in the 13th Century. The number system records each number from 1–9999 as a unique sign based on encoding units, tens, hundreds, and thousands in quadrants: top-right, top-left, bottom-right, and bottom-left respectively. The Clairvo font uses OpenType glyph substitution to handle mirroring of the shapes in each quadrant, but relies mostly on contextual GPOS anchors to shift the glyphs around the quadrants. This means that all 9999 numbers can be represented my a minimal number of glyphs.",
+      "vendorID":"TIRO",
+      "versionMajor":1,
+      "versionMinor":0,
+      "version":"Version 1.00",
+      "codepageRange":"0000000000000001",
+      "unicodeRange":"00000000000000000000000000000001",
+      "embedding":"0000"
+    },
+    "meta":{
+      "metaCreator":true,
+      "metaFormatVersion":8,
+      "metaBuild":"7644"
+    },
+    "settings":{
+      "settings.RoundCoordinates":"round"
+    },
+    "masters":[
+      {
+        "fontMaster":{
+          "name":"Regular",
+          "tsn":"Regular",
+          "sgn":"Clairvo",
+          "ffn":"Clairvo Regular",
+          "psn":"Clairvo-Regular",
+          "weight_name":"Regular",
+          "width_name":"Normal",
+          "slope_name":"Plain",
+          "ascender":800,
+          "descender":-200,
+          "xHeight":500,
+          "capsHeight":700,
+          "measurement":250,
+          "weight":400,
+          "width":5,
+          "lineGap":250,
+          "safeTop":1050,
+          "safeBottom":450,
+          "underlineThickness":50,
+          "underlinePosition":-100,
+          "panose":"0 0 0 0 0 0 0 0 0 0",
+          "otherData":{
+            "DistanceX":50,
+            "DistanceY":50,
+            "HintingMaxH":250,
+            "HintingMaxV":250,
+            "HintingMinH":20,
+            "HintingMinV":20,
+            "OS2UseTypoMetrics":0,
+            "ProcessLoops":false,
+            "TtHinter":1,
+            "TtHorizSmoothing":0,
+            "TtNoSmoothing":0,
+            "TtaFamilyAlign":0,
+            "TtaHintComposites":true,
+            "TtaHintingLimit":200,
+            "TtaHintingRangeMax":50,
+            "TtaHintingRangeMin":8,
+            "TtaIncreaseXHeight":11,
+            "TtaNoClipping":true,
+            "TtaSharpDw":false,
+            "TtaSharpGdi":true,
+            "TtaSharpGray":false,
+            "hhea_ascender":750,
+            "hhea_descender":-250,
+            "hhea_line_gap":100,
+            "hhea_use_custom":false,
+            "strikeout_position":300,
+            "strikeout_size":50,
+            "subscript_x_offset":0,
+            "subscript_x_size":650,
+            "subscript_y_offset":75,
+            "subscript_y_size":600,
+            "superscript_x_offset":0,
+            "superscript_x_size":650,
+            "superscript_y_offset":350,
+            "superscript_y_size":600
+          },
+          "hintingParameters":{
+          },
+          "kerning":{
+          },
+          "fontZonesT":[
+            {
+              "position":695,
+              "value":10,
+              "name":"basetop"
+            },
+            {
+              "position":395,
+              "value":10,
+              "name":"ntop"
+            }
+          ],
+          "fontZonesB":[
+            {
+              "position":-195,
+              "value":10,
+              "name":"basebottom"
+            },
+            {
+              "position":105,
+              "value":10,
+              "name":"nbottom"
+            }
+          ],
+          "fontStemsH":[
+            {
+              "value":40,
+              "name":"Hstem"
+            }
+          ],
+          "fontStemsV":[
+            {
+              "value":40,
+              "name":"Vstem"
+            }
+          ],
+          "measurements":{
+            "ItalicAngle":"0",
+            "Tension":"60",
+            "Ascender":"750",
+            "Descender":"-250",
+            "CapsHeight":"700",
+            "XHeight":"500",
+            "UT":"50",
+            "UP":"-100"
+          }
+        }
+      }
+    ],
+    "expressionsUpdated":true
+  }
+}
