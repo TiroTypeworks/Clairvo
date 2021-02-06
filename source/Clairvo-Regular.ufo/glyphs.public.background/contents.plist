@@ -6,12 +6,6 @@
   <string>B_A_S_E_.glif</string>
   <key>eight</key>
   <string>eight.glif</string>
-  <key>f50</key>
-  <string>f50.glif</string>
-  <key>f500</key>
-  <string>f500.glif</string>
-  <key>f5000</key>
-  <string>f5000.glif</string>
   <key>five</key>
   <string>five.glif</string>
   <key>four</key>
@@ -28,6 +22,16 @@
   <string>three.glif</string>
   <key>two</key>
   <string>two.glif</string>
+  <key>x30.300</key>
+  <string>x30.300.glif</string>
+  <key>x40.400</key>
+  <string>x40.400.glif</string>
+  <key>x50</key>
+  <string>x50.glif</string>
+  <key>x500</key>
+  <string>x500.glif</string>
+  <key>x5000</key>
+  <string>x5000.glif</string>
   <key>zero</key>
   <string>zero.glif</string>
 </dict>

@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <glyph name="three" format="2">
   <unicode hex="0033"/>
-  <anchor x="-130" y="130" name="_hundreds"/>
-  <anchor x="130" y="380" name="_tens"/>
-  <anchor x="130" y="130" name="_thousands"/>
+  <anchor x="140" y="130" name="_thousands"/>
   <anchor x="-130" y="380" name="_units"/>
   <outline>
     <contour>

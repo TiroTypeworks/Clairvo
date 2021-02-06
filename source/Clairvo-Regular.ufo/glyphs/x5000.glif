@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<glyph name="f50" format="2">
-  <anchor x="130" y="380" name="_tens"/>
+<glyph name="x5000" format="2">
+  <anchor x="130" y="120" name="_thousands"/>
   <outline>
     <contour>
-      <point x="-122" y="400" type="line"/>
-      <point x="-122" y="360" type="line"/>
-      <point x="150" y="360" type="line"/>
-      <point x="150" y="400" type="line"/>
+      <point x="-132" y="100" type="line"/>
+      <point x="150" y="100" type="line"/>
+      <point x="150" y="140" type="line"/>
+      <point x="-132" y="140" type="line"/>
     </contour>
     <contour>
-      <point x="-150" y="372" type="line"/>
-      <point x="110" y="112" type="line"/>
-      <point x="138" y="140" type="line"/>
-      <point x="-122" y="400" type="line"/>
+      <point x="-132" y="100" type="line"/>
+      <point x="138" y="372" type="line"/>
+      <point x="110" y="400" type="line"/>
+      <point x="-150" y="138" type="line"/>
     </contour>
   </outline>
   <guideline angle="0" x="0" y="100"/>

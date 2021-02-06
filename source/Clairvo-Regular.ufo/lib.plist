@@ -17,9 +17,11 @@
     <string>seven</string>
     <string>eight</string>
     <string>nine</string>
-    <string>f50</string>
-    <string>f500</string>
-    <string>f5000</string>
+    <string>x50</string>
+    <string>x500</string>
+    <string>x5000</string>
+    <string>x30.300</string>
+    <string>x40.400</string>
   </array>
 </dict>
 </plist>
