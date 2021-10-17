@@ -139,17 +139,22 @@ class Font:
 
     def _autohint(self, otf, fmt):
         logger.info(f"Autohinting {self.name}.{fmt.value}")
-#        if fmt == Format.TTF:
-#            from io import BytesIO
-#
-#            from ttfautohint import ttfautohint
-#
-#            buf = BytesIO()
-#            otf.save(buf)
-#            otf.close()
-#            data = ttfautohint(in_buffer=buf.getvalue(), no_info=True)
-#            otf = TTFont(BytesIO(data))
-        if fmt == Format.OTF:
+        if fmt == Format.TTF:
+            from io import BytesIO
+
+            from ttfautohint import ttfautohint
+
+            buf = BytesIO()
+            otf.save(buf)
+            otf.close()
+            data = ttfautohint(in_buffer=buf.getvalue(), no_info=True)
+            otf = TTFont(BytesIO(data))
+
+            # Set bit 3 on head.flags
+            # https://font-bakery.readthedocs.io/en/latest/fontbakery/profiles/googlefonts.html#com.google.fonts/check/integer_ppem_if_hinted
+            head = otf["head"]
+            head.flags |= 1 << 3
+        elif fmt == Format.OTF:
             from tempfile import TemporaryDirectory
 
             from psautohint.__main__ import main as psautohint
