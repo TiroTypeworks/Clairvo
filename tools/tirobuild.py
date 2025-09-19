@@ -32,6 +32,7 @@ class SaveState:
         self.fmt = self.font.fmt
         self.variable = self.font.variable
         self.names = self.font.names
+        self.instances = self.font.instances
         self.STAT = self.font.STAT
         self.meta = self.font.meta
 
@@ -40,6 +41,7 @@ class SaveState:
         self.font.fmt = self.fmt
         self.font.variable = self.variable
         self.font.names = self.names
+        self.font.instances = self.instances
         self.font.STAT = self.STAT
         self.font.meta = self.meta
 
@@ -87,10 +89,10 @@ def instanceName(name, instance, font):
     return name.split("-")[0] + "-" + subfamily
 
 
-def mergeConfigs(first, second):
+def mergeConfigs(first, second, skip=None):
     conf = {**first}
     for key in second:
-        if key == "fonts":
+        if skip and key in skip:
             continue
         if key not in conf:
             conf[key] = second[key]
@@ -219,13 +221,46 @@ def run_tx(otf, options, outTag=None):
     return otf
 
 
+def instantiateCFF2(otf, coordinates):
+    from fontTools.varLib.mutator import interpolate_cff2_metrics
+    from fontTools.misc.fixedTools import floatToFixedToFloat
+    from fontTools.varLib.models import normalizeLocation, piecewiseLinearMap
+
+    # instantiate the CFF2 table using tx, since FontTools.varLib mutator
+    # produces broken glyphs.
+    coords = ",".join(str(v) for v in coordinates.values())
+    otf = run_tx(otf, ["+V", "-U", coords], "CFF ")
+
+    # But tx doesn’t interpolate metrics, so we do it here.
+    topDict = otf["CFF "].cff.topDictIndex[0]
+
+    # Some odd rounding happens to TopDict version, so reset it.
+    topDict.version = f"{otf["head"].fontRevision}"
+
+    glyphOrder = otf.getGlyphOrder()
+    fvarAxes = otf["fvar"].axes
+    axes = {a.axisTag: (a.minValue, a.defaultValue, a.maxValue) for a in fvarAxes}
+    loc = normalizeLocation(coordinates, axes)
+    if "avar" in otf:
+        maps = otf["avar"].segments
+        loc = {k: piecewiseLinearMap(v, maps[k]) for k, v in loc.items()}
+    # Quantize to F2Dot14, to avoid surprise interpolations.
+    loc = {k: floatToFixedToFloat(v, 14) for k, v in loc.items()}
+    interpolate_cff2_metrics(otf, topDict, glyphOrder, loc)
+
+    # Set post table version to 3.0.
+    otf["post"].formatType = 3.0
+
+    return otf
+
+
 class Font:
     def __init__(self, name, conf, project):
         self.name = name
 
         # Merge keys from the top level (project) configuration into the
         # current font’s conf.
-        conf = mergeConfigs(conf, project)
+        conf = mergeConfigs(conf, project, skip=["fonts"])
 
         self.source = conf.get("source")
         self.ren = conf.get("glyphnames")
@@ -246,14 +281,16 @@ class Font:
         if "source" in self.ttf:
             if self.variable:
                 if not isinstance(self.ttf["source"], list):
-                    raise RuntimeError(f"TTF source must be list for variable fonts")
+                    raise RuntimeError("TTF source must be a list for variable fonts")
                 self.ttf["source"] = [path.parent / p for p in self.ttf["source"]]
             else:
+                if isinstance(self.ttf["source"], list):
+                    raise RuntimeError("TTF source must not be a list for static fonts")
                 self.ttf["source"] = path.parent / self.ttf["source"]
 
         self.subsets = {}
         for name, subset in conf.get("subsets", {}).items():
-            if not "glyphlist" in subset:
+            if "glyphlist" not in subset:
                 raise RuntimeError(f"Subset “{name}” did not provide a glyph list")
             glyphlist, tags = self._parsesubset(path.parent / subset["glyphlist"])
             subset["glyphlist"] = glyphlist
@@ -262,7 +299,7 @@ class Font:
                 subset["cmapoverride"] = self._parsecmapoverride(
                     path.parent / subset["cmapoverride"]
                 )
-            self.subsets[name] = mergeConfigs(subset, conf)
+            self.subsets[name] = mergeConfigs(subset, conf, skip=["instances"])
 
         self.names = conf.get("names", {})
         self.set = conf.get("set", {})
@@ -287,7 +324,7 @@ class Font:
 
         self.STAT = conf.get("STAT")
         if self.STAT:
-            if not "axes" in self.STAT:
+            if "axes" not in self.STAT:
                 raise RuntimeError("“STAT” table must have “axes”")
 
         self.featureparams = conf.get("featureparams", {})
@@ -309,6 +346,9 @@ class Font:
                     raise RuntimeError(
                         "“featureparams” of character variant must be a dictionary"
                     )
+
+        self.autohinting = conf.get("autohinting", {})
+        self.gasp = conf.get("gasp", {})
 
     @property
     def ext(self):
@@ -363,11 +403,24 @@ class Font:
             with open(self.ren, "r") as f:
                 logger.info(f"Setting {path.name} final glyph names")
                 lines = f.read().split("\n")
-                lines = [l.split() for l in lines if l and not l.startswith("%")]
-                ufo.lib[PSNAMES_KEY] = {l[0]: l[1] for l in lines}
+                lines = [
+                    line.split() for line in lines if line and not line.startswith("%")
+                ]
+                ufo.lib[PSNAMES_KEY] = {line[0]: line[1] for line in lines}
 
         if "fstype" in self.set:
             ufo.info.openTypeOS2Type = self.set["fstype"]
+
+        if self.gasp:
+            records = []
+            for range in self.gasp:
+                records.append(
+                    {
+                        "rangeMaxPPEM": range["maxPPEM"],
+                        "rangeGaspBehavior": range["behavior"],
+                    }
+                )
+            ufo.info.openTypeGaspRangeRecords = records
 
         return ufo
 
@@ -489,16 +542,28 @@ class Font:
 
         from fontTools.ttLib import TTFont
 
-        logger.info(f"Autohinting {self.filename}")
         if self.fmt == Format.TTF:
+            conf = self.autohinting.get("ttfautohint", {})
+            if conf.get("disable"):
+                return otf
+
+            logger.info(f"Autohinting {self.filename}")
+
             from io import BytesIO
 
             from ttfautohint import ttfautohint
 
+            opts = {"no-info": True, **conf}
+            opts = {k.replace("-", "_"): v for k, v in opts.items()}
+
+            # Pop our own options or options controlling input/output.
+            for key in {"disable", "in_buffer", "in_file", "out_file"}:
+                opts.pop(key, None)
+
             buf = BytesIO()
             otf.save(buf)
             otf.close()
-            data = ttfautohint(in_buffer=buf.getvalue(), no_info=True)
+            data = ttfautohint(in_buffer=buf.getvalue(), **opts)
             otf = TTFont(BytesIO(data))
 
             # Set bit 3 on head.flags
@@ -506,6 +571,12 @@ class Font:
             head = otf["head"]
             head.flags |= 1 << 3
         elif self.fmt == Format.OTF:
+            conf = self.autohinting.get("psautohint", {})
+            if conf.get("disable"):
+                return otf
+
+            logger.info(f"Autohinting {self.filename}")
+
             from tempfile import TemporaryDirectory
 
             from psautohint.__main__ import main as psautohint
@@ -521,7 +592,6 @@ class Font:
 
     def _subset(self, otf):
         from fontTools.subset import Options, Subsetter
-        from ufo2ft.util import calcCodePageRanges
 
         for name, subset in self.subsets.items():
             with SaveState(self):
@@ -529,7 +599,6 @@ class Font:
                 logger.info(f"Creating {self.filename} subset")
                 new = deepcopy(otf)
                 options = Options()
-                options.name_IDs = ["*"]
                 options.name_legacy = True
                 options.name_languages = ["*"]
                 options.recommended_glyphs = True
@@ -542,8 +611,7 @@ class Font:
                 options.symbol_cmap = True
                 options.layout_closure = False
                 options.prune_unicode_ranges = True
-                if hasattr(options, "prune_codepage_ranges"):
-                    options.prune_codepage_ranges = True
+                options.prune_codepage_ranges = True
                 options.passthrough_tables = False
                 options.recalc_average_width = True
                 options.ignore_missing_glyphs = True
@@ -552,29 +620,18 @@ class Font:
                 options.drop_tables.remove("DSIG")
                 options.no_subset_tables += ["DSIG", "meta"]
 
+                options.name_IDs = [
+                    n.nameID for n in otf["name"].names if n.nameID < 256
+                ]
+
                 subsetter = Subsetter(options=options)
                 subsetter.populate(subset["glyphlist"])
 
                 with TemporaryLogLevel(logging.WARNING):
                     subsetter.subset(new)
 
-                if not hasattr(options, "prune_codepage_ranges"):
-                    from ufo2ft.util import calcCodePageRanges
-
-                    unicodes = set()
-                    for table in new["cmap"].tables:
-                        if table.isUnicode():
-                            unicodes.update(table.cmap.keys())
-                    bits = set(range(64)) - calcCodePageRanges(unicodes)
-                    if len(bits) == 64:
-                        bits -= {0}
-                    for bit in bits:
-                        if 0 <= bit < 32:
-                            new["OS/2"].ulCodePageRange1 &= ~(1 << bit)
-                        else:
-                            new["OS/2"].ulCodePageRange2 &= ~(1 << (bit - 32))
-
                 self.names = subset.get("names", {})
+                self.instances = subset.get("instances")
                 self.meta = subset.get("meta")
                 self._overridecmap(new, subset.get("cmapoverride"))
                 new = self._optimize(new)
@@ -631,6 +688,10 @@ class Font:
             stream.seek(0)
             otf = TTFont(stream)
 
+            # Some odd rounding happens to fontRevision when loading from
+            # binary again, so reset it.
+            otf["head"].fontRevision = vf["head"].fontRevision
+
             # Remove Variations PS Name Prefix, and do so before updating the
             # name table so it does not leak into the instance PS name.
             otf["name"].removeNames(25)
@@ -647,8 +708,7 @@ class Font:
                 self.STAT = None
                 with pruningUnusedNames(otf):
                     if "CFF2" in otf:
-                        coords = ",".join(str(v) for v in coordinates.values())
-                        otf = run_tx(otf, ["+V", "-U", coords], "CFF ")
+                        otf = instantiateCFF2(otf, coordinates)
                     otf = instantiateVariableFont(otf, coordinates, inplace=True)
                 setRibbiBits(otf)
                 self.names = conf.get("names", {})
@@ -698,7 +758,7 @@ class Font:
         if 5 in names:
             import re
 
-            m = re.match("Version (\d\.\d\d)", names[5])
+            m = re.match(r"Version (\d\.\d\d)", names[5])
             if m is None:
                 raise ValueError(
                     "Can’t parse version string. "
@@ -802,6 +862,8 @@ class Font:
             self._save(new, fmt)
 
     def _save(self, otf, wfmt=None):
+        import re
+
         fmt = self.fmt
         fmtdir = fmt.name
         if self.variable:
@@ -809,7 +871,8 @@ class Font:
         if wfmt is not None:
             fmtdir += wfmt.name
             self.fmt = wfmt
-        parent = self.output / self.name.split("-")[0] / fmtdir
+        name = re.sub(r"\[.*?\]", "", self.name).split("-")[0]
+        parent = self.output / name / fmtdir
         parent.mkdir(parents=True, exist_ok=True)
         path = parent / self.filename
         logger.info(f"Saving {path}")
@@ -854,7 +917,7 @@ class Font:
                 from fontTools.ttLib import TTFont
 
                 if len(otfds.sources) != len(self.ttf["source"]):
-                    raise RuntimeError(f"TTF sources must equal DesignSpace sources")
+                    raise RuntimeError("TTF sources must equal DesignSpace sources")
 
                 for i, source in enumerate(otfds.sources):
                     otl = TTFont(self.ttf["source"][i])
@@ -946,14 +1009,14 @@ class Builder:
             project["path"] = path
 
         if project.get("fonts", None) is None:
-            raise RuntimeError(f"Missing or empty top level “fonts:” key.")
+            raise RuntimeError("Missing or empty top level “fonts:” key.")
 
         self.fonts = []
         for name, conf in project.get("fonts", {}).items():
             self.fonts.append(Font(name, conf, project))
 
         if not self.fonts:
-            raise RuntimeError(f"There are no fonts in the project.")
+            raise RuntimeError("There are no fonts in the project.")
 
     def build(self):
         for font in self.fonts:
